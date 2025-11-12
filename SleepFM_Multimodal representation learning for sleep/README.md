@@ -39,7 +39,8 @@ Most existing deep learning studies:
 Each modality is processed by its own **1D CNN encoder (EfficientNet-based)**.  
 Contrastive learning across modalities allows the model to learn **shared representations** that align information from different physiological signals.
 
-![image.png](attachment:77421513-1655-442e-994f-d4c98d4765bb:image.png)
+<img width="612" height="769" alt="image (3)" src="https://github.com/user-attachments/assets/b453e5c0-e998-44ee-9993-1e7f5fb356f7" />
+
 
 ---
 
@@ -83,8 +84,9 @@ Contrastive objectives are applied over these embeddings.
 2. Diagonal entries correspond to matching timestamps  
 3. Maximize diagonal similarity vs. others  
 4. Combine symmetric losses (i→j, j→i)  
+<img width="548" height="90" alt="image (4)" src="https://github.com/user-attachments/assets/938de5bd-6d57-4c9c-b98b-e68b5ba0da06" />
 
-![Pairwise CL](path/to/pairwise.png)
+
 
 ---
 
@@ -92,8 +94,9 @@ Contrastive objectives are applied over these embeddings.
 
 - Each modality embedding is compared to the **mean embedding of all other modalities** at the same timestamp  
 - For sample *k*, the loss for modality *i* uses the averaged embedding of modalities ≠ *i*  
+<img width="557" height="82" alt="image (5)" src="https://github.com/user-attachments/assets/37bbb165-62f9-4f64-8e3c-af94ee9180e5" />
 
-![LOO CL](path/to/loo.png)
+
 
 ---
 
@@ -117,7 +120,9 @@ Encoders were pretrained with CL and later used to generate embeddings for downs
 - **Pairwise CL** exceeded CNN baseline  
 → CL embeddings captured demographic patterns effectively  
 
-![Demographic Results](path/to/demographic.png)
+<img width="1200" height="279" alt="image (6)" src="https://github.com/user-attachments/assets/92231b19-a8ef-4082-819b-654edc3930c7" />
+<img width="544" height="161" alt="image (7)" src="https://github.com/user-attachments/assets/a1286589-a206-4dda-86ba-df23f3169b4a" />
+
 
 ---
 
@@ -130,11 +135,13 @@ Encoders were pretrained with CL and later used to generate embeddings for downs
 - **Median Rank:** median position of true pair (lower = better)  
 
 **Results**
-- **LOO-CL:** 500–8000× higher Recall@10 vs. random retrieval  
-- **Pairwise CL:** performed slightly better here, as retrieval aligns with its objective  
+- **LOO-CL:** 500–8000× higher Recall@10 vs. random retrieval
+- <img width="554" height="200" alt="image (8)" src="https://github.com/user-attachments/assets/09b161de-c051-4d74-a3e4-7101a63b2174" />
 
-![Retrieval LOO](path/to/retrieval_loo.png)  
-![Retrieval Pairwise](path/to/retrieval_pairwise.png)
+- **Pairwise CL:** performed slightly better here, as retrieval aligns with its objective  
+<img width="553" height="202" alt="image (9)" src="https://github.com/user-attachments/assets/a82132c4-cf3b-4321-8a9a-17b7dd2a732b" />
+
+
 
 ---
 
@@ -147,9 +154,10 @@ Encoders were pretrained with CL and later used to generate embeddings for downs
 **Findings**
 - **LOO > Pairwise > CNN**
 → LOO CL offered the most generalizable representations  
+<img width="1273" height="314" alt="image (10)" src="https://github.com/user-attachments/assets/072a89c6-e942-493c-bfc5-6a8ed4ccbcae" />
 
-![Sleep Staging](path/to/sleep_stage.png)  
-![SDB Classification](path/to/sdb.png)
+<img width="536" height="160" alt="image (11)" src="https://github.com/user-attachments/assets/9e93878b-aeb7-47f4-9fa1-43bd9525f9e8" />
+
 
 ---
 
@@ -161,7 +169,8 @@ Encoders were pretrained with CL and later used to generate embeddings for downs
 **Outcome:**  
 LOO-CL consistently showed the highest AUROC/AUPRC → strong few-shot performance  
 
-![Few Shot](path/to/few_shot.png)
+<img width="1258" height="321" alt="image (12)" src="https://github.com/user-attachments/assets/11adff03-72c4-4e55-848d-35a70694054d" />
+
 
 ---
 
@@ -180,13 +189,15 @@ Trained CL models with different modality counts (3 / 2 / 1).
 → modality choice significantly impacts downstream utility  
 - Single-modal models performed poorest  
 
-![Ablation](path/to/ablation.png)
+<img width="1241" height="315" alt="image (13)" src="https://github.com/user-attachments/assets/1f3042fc-ab5f-4173-bd3d-c16ff28f3e73" />
+
 
 **External dataset (PhysioNet):**
 - SleepFM outperformed CNNs trained on external data, despite no fine-tuning  
 - Maintained strong results despite EEG configuration differences  
+<img width="1019" height="314" alt="image (14)" src="https://github.com/user-attachments/assets/0a44bf9a-43a4-4654-8a1b-7aef1f51784f" />
 
-![External Data](path/to/external.png)
+
 
 ---
 
@@ -196,8 +207,6 @@ Trained CL models with different modality counts (3 / 2 / 1).
 - **LOO-CL** effectively handles multimodal inputs and outperforms pairwise CL in representation learning  
 - **Pairwise CL** remains slightly better for retrieval tasks  
 - The model generalizes robustly to unseen datasets, suggesting potential for **clinical deployment** even with limited labels  
-
----
 
 ## ⚠️ Limitations
 

@@ -1,4 +1,4 @@
-# ⏱️ MOMENT: A Family of Open Time-series Foundation Models
+# MOMENT: A Family of Open Time-series Foundation Models
 
 **Paper:** *MOMENT: A Family of Open Time-series Foundation Models*  
 **Published:** ICML 2024

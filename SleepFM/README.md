@@ -1,4 +1,4 @@
-# 💤 SleepFM: Multimodal Foundation Model for PSG Data
+# SleepFM: Multimodal Foundation Model for PSG Data
 
 ---
 

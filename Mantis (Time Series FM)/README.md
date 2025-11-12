@@ -1,4 +1,4 @@
-# 🦋 MANTIS: Lightweight Calibrated Foundation Model for User-Friendly Time Series Classification
+# MANTIS: Lightweight Calibrated Foundation Model for User-Friendly Time Series Classification
 
 **Paper:** *MANTIS: Lightweight Calibrated Foundation Model for User-Friendly Time Series Classification*  
 

@@ -66,7 +66,3 @@ This collection exists to help me:
 - Compare how each model handles frequency, scaling, and multi-task learning  
 - Use these ideas in my own projects (e.g., sleep stage classification with MOMENT)  
 - Prepare for future research or graduate-level work involving foundation models  
-
----
-
-## 🗂 Repository Structure
